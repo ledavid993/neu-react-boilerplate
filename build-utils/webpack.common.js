@@ -1,8 +1,11 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "../src/app.js"),
+  entry: {
+    app: path.resolve(__dirname, "../src/app.js"),
+  },
   module: {
     rules: [
       {
@@ -25,15 +28,20 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   output: {
-    filename: "app.js",
+    filename: "[name].js",
+    publicPath: "../app",
     path: path.resolve(__dirname, "../app/assets"),
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "app.css",
     }),
+    new CleanWebpackPlugin({
+      dry: true,
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: [
+        path.resolve(__dirname, "!../app/assets/app.js"),
+      ],
+    }),
   ],
-  devServer: {
-    contentBase: path.resolve(__dirname, "../app"),
-  },
 };
