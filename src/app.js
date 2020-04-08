@@ -7,7 +7,7 @@ let appLib = new AppLib();
 let myapp = {
   myfunction: function () {
     ReactDOM.render(
-      <div>Hello World My Friend From Another WWWorld</div>,
+      <div>Hello World My Friend From Another wWWWorld</div>,
       document.getElementById("app")
     );
   },

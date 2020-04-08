@@ -5,6 +5,8 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     contentBase: path.resolve(__dirname, "../app"),
-    writeToDisk: true,
+    writeToDisk: (filePath) => {
+      return /app\.js$/.test(filePath);
+    },
   },
 };

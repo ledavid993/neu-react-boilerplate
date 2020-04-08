@@ -37,10 +37,9 @@ module.exports = {
       filename: "app.css",
     }),
     new CleanWebpackPlugin({
-      dry: true,
       verbose: true,
       cleanOnceBeforeBuildPatterns: [
-        path.resolve(__dirname, "!../app/assets/app.js"),
+        path.resolve(__dirname, "../app/assets/app.js"),
       ],
     }),
   ],
