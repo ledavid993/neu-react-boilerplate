@@ -6,11 +6,6 @@ Javascript starter project for Neutralinojs
 
 Clone the repo 
 
-```bash
-$ git clone https://github.com/neutralinojs/neutralinojs-javascript.git
-$ cd neutralinojs-javascript
-```
-
 Install dependencies 
 
 ```bash
